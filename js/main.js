@@ -11,6 +11,7 @@ import { fetchData } from "./modules/Async.js";
     console.log("Java Loaded");
     console.log(pArray);
 
+    
     function handleDataSet(data) {
         // this defines the projDynamic tag in html as 'pDynamic'
         let pDynamic = document.querySelector(".projDynamic"),
@@ -44,6 +45,6 @@ import { fetchData } from "./modules/Async.js";
     //handleDataSet(pArray);
 
 
-    //async statement goes at bottom of page
+    //async statements go at bottom of page. for multiple .json files just add another
     fetchData("./DataSet.json").then(data => handleDataSet(data)).catch(err =>console.log(err));
 })();
