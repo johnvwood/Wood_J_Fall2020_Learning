@@ -1,5 +1,5 @@
 {
-    "proj4":{"name": "Pyramids and Blobs","type": "3d","desc": "This was inspired by Egypt and Jaba the Hutt.","pic": "pyramids.jpg"},
+    "proj4":{"name": "Pyramids and Blobs","type": "3D","desc": "This was inspired by Egypt and Jaba the Hutt.","pic": "pyramids.jpg"},
     "proj5":{"name": "Makeup Mockup","type": "Photshop","desc": "This is a Mockup for Makeup Company101.","pic": "magazine.jpg"},
     "proj6":{"name": "Database Cleaner","type": "PHPMyAdmin Stuff","desc": "This is an app made for cleaning databases.","pic": "dbCleaner.jpg"}
 }

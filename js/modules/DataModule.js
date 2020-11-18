@@ -5,7 +5,7 @@
 export default {
     proj1: {
         name: "Cubes and Spheres",
-        type: "3d",
+        type: "3D",
         desc: "This project was designed in C4D.",
         pic: "cubes.jpg"
     },
