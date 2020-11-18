@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Website</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!--refers to the icon located at the top in your browser-->
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <h1 class="hidden">Learning Website</h1>
+
+    <main class="app">
+        <!-- this is where the template data goes -->
+        <section class="projDynamic"></section>
+
+    </main>
+
+    <!--templates go below footer, they dont get rendered-->
+    <!--this template is used to clone data into the visible html-->
+    <template class="projTemplate">
+        <div class="projDiv">
+            <h2 class="projName"></h2>
+            <p class="projType"></p>
+            <p class="projDesc"></p>
+            <img class="projPic" src="" alt="project pic">
+        </div>
+    </template>
+
+</body>
+<!--type is module and .js link always at bottom of html tag-->
+<script type="module" src="js/main.js"></script>
+</html>

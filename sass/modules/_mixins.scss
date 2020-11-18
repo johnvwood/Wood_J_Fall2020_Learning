@@ -1,0 +1,17 @@
+//used for applying the same style to multiple elements/groups
+//you have 3 squares you want purple, and have white uppercase <p> text inside
+
+@mixin purpleSquare {
+
+    square1, square2, square3 {
+        background-color: indigo;
+        p {
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+
+
+}
+
+//to use the mixin, write @include inside of the parent container in its scss module

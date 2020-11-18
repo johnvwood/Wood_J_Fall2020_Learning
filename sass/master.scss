@@ -1,0 +1,14 @@
+// this command usually compiles things nicely: (enter in terminal)
+// sass --watch sass/master.scss:css/main.css (add "--style compressed")
+
+// use underscore for module files ex: "_vars.scss"
+
+//this file is ONLY FOR IMPORTS
+
+@import "modules/_mediaqs.scss";
+@import "modules/_vars.scss";
+@import "modules/_mixins.scss";
+
+@import "modules/_main.scss";
+@import "modules/_header.scss";
+@import "modules/_footer.scss";
