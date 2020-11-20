@@ -37,10 +37,12 @@ body {
   max-width: 100%;
   font-style: italic;
   color: white;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: 300ms;
 }
 .projName:hover {
-  background-color: red;
+  background-color: #1fac2b;
 }
 
 /*# sourceMappingURL=main.css.map */
