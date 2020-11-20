@@ -1,9 +1,46 @@
+html {
+  background-color: #2b422b;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
 body {
-  background-color: lightblue;
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  color: #032703;
 }
 
 .hidden {
   display: none;
+}
+
+.projDiv {
+  max-width: 500px;
+  margin: auto;
+}
+.projDiv p {
+  padding: 0px 6px 0px;
+}
+.projDiv p:nth-child(3) {
+  margin-bottom: 50px;
+}
+
+.projPic {
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+.projName {
+  padding: 6px;
+  background-color: #06570d;
+  max-width: 100%;
+  font-style: italic;
+  color: white;
+  cursor: pointer;
+}
+.projName:hover {
+  background-color: red;
 }
 
 /*# sourceMappingURL=main.css.map */

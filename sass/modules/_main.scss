@@ -1,9 +1,52 @@
 //html color codes: https://www.w3schools.com/colors/colors_names.asp
 // color pallete maker https://color.adobe.com/create
+html {
+    background-color: rgb(43, 66, 43);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
 body {
-    background-color: lightblue;
+    background-color: white;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    color: rgb(3, 39, 3);
 }
 
 .hidden {
     display:none;
 }
+
+.projDiv {
+    max-width: 500px;
+    margin: auto;
+    p {
+        // shorthand padding is clockwise starting w top
+        //if only 3 values, it assumes the middle is for left and right
+        padding: 0px 6px 0px;
+        // counts include every child in the parent
+        &:nth-child(3){
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.projPic {
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.projName {
+    padding: 6px;
+    background-color:rgb(6, 87, 13);
+    max-width: 100%;
+    font-style: italic;
+    color: white;
+    cursor: pointer;
+    //use & sign for subdefining in sass elements
+    &:hover {
+        background-color: red;
+    }
+}
+
