@@ -10,12 +10,12 @@
     //This is the DB credentials
 
     $db_user = 'root';
-    $db_pass = 'password';
+    $db_pass = '';
 
-    try{
+    try {
         $pdo = new PDO($dsn, $db_user, $db_pass);
-        var_dump($pdo);
-    } catch (PDOException $exception){
+        //echo 'Connection Successful';
+    } catch(PDOException $exception) {
         echo 'Connection Error:'.$exception->getMessage();
         exit();
     }

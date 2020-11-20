@@ -2,14 +2,18 @@
 // importing from DataModule.js
 // the ./ means going up a folder
 // "pArray" can be anything, it just defines the data array
-import pArray from "./modules/DataModule.js";
+//import pArray from "./modules/DataModule.js";
 import { fetchData } from "./modules/Async.js";
 
 // basic java syntax is (() => {code goes here})(); idk why, but it is
 (() => {
     // writing this line allows you to see if ur .js file is loaded correctly
     console.log("Java Loaded");
-    console.log(pArray);
+    //console.log(pArray);
+
+    function popErrorBox(message) {
+        alert("Pop Error Box: ")
+    }
 
     
     function handleDataSet(data) {
@@ -28,13 +32,15 @@ import { fetchData } from "./modules/Async.js";
             let pCurrent = pTemplate.cloneNode(true),
                 // the newly copied html tags in .projDiv are now known as 'pCurrentInfo'
                 pCurrentInfo = pCurrent.querySelector(".projDiv").children;
-            // elements start at 0 instead of 1
+            // elements children start at number 0
             // use the "data" again as a holder for all items
-            pCurrentInfo[0].textContent = data[pID].name;
-            pCurrentInfo[1].textContent = data[pID].type;
-            pCurrentInfo[2].textContent = data[pID].desc;
+            // the .Name defines the column in the PHPMyAdmin database
+            pCurrentInfo[0].textContent = data[pID].Name;
+            pCurrentInfo[1].textContent = data[pID].Type;
+            pCurrentInfo[2].textContent = data[pID].Description;
             // for an image (the path). it takes all assigned item images
-            pCurrentInfo[3].src = `./images/${data[pID].pic}.jpg`;
+            // you can add .jpg after {} if all file ext are the same
+            pCurrentInfo[3].src = `./images/${data[pID].Pic}`;
             // adds the new data from pCurrent into pDynamic
             //'append' is a fancy way of saying 'add'
             pDynamic.appendChild(pCurrent);
@@ -46,5 +52,6 @@ import { fetchData } from "./modules/Async.js";
 
 
     //async statements go at bottom of page. for multiple .json files just add another
-    fetchData("./DataSet.json").then(data => handleDataSet(data)).catch(err =>console.log(err));
+    //fetch, then use handleDataSet, catch the errors w log and popErrorBox
+    fetchData("includes/functions.php").then(data => handleDataSet(data)).catch(err =>{console.log(err); popErrorBox(err);});
 })();
