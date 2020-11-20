@@ -10,7 +10,7 @@ async function fetchData(datasource) {
     
     let dataset = await resource.json();
 
-    return dataset;
+    return dataset[0];
 }
 
 //statement used for exporting
