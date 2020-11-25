@@ -14,4 +14,8 @@
 
 }
 
+.hidden {
+    display:none;
+}
+
 //to use the mixin, write @include inside of the parent container in its scss module

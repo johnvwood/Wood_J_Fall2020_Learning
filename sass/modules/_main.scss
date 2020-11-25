@@ -1,9 +1,8 @@
 //html color codes: https://www.w3schools.com/colors/colors_names.asp
 // color pallete maker https://color.adobe.com/create
 html {
-    background-color: rgb(43, 66, 43);
+    background-color: darkslategray;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
 body {
@@ -14,12 +13,12 @@ body {
     color: rgb(3, 39, 3);
 }
 
-.hidden {
-    display:none;
+.app {
+    max-width: 700px;
+    margin: auto;
 }
 
-.projDiv {
-    max-width: 500px;
+.projDiv {   
     margin: auto;
     p {
         // shorthand padding is clockwise starting w top
@@ -39,7 +38,7 @@ body {
 
 .projName {
     padding: 6px;
-    background-color:rgb(6, 87, 13);
+    background-color:darkslategrey;
     max-width: 100%;
     font-style: italic;
     color: white;
@@ -52,3 +51,45 @@ body {
     }
 }
 
+.vueContainer {
+    margin: auto;
+}
+
+.vueHeader {
+    background-color:darkslategray;
+    color: white;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.attackButton {
+    padding: 4px 10px;
+    margin: 6px;
+    color: white;
+    background-color: rgb(59, 21, 21);
+    border: 2px solid red;
+    border-radius: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 300ms;
+    text-decoration: none;
+    &:hover {
+        background-color: red;
+        margin: 0px;
+        padding: 10px 16px;
+        border-radius: 0px;
+    }
+}
+
+.fruitList{
+    margin: 10px 0px 40px 0px;
+}
+
+// the style that is default
+.toggleText {
+    display: none;
+}
+// the style that is toggled
+.toggleTextV {
+    display: block;
+}

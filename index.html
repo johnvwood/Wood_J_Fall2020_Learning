@@ -7,14 +7,33 @@
     <link rel="stylesheet" href="css/main.css">
     <!--refers to the icon located at the top in your browser-->
     <link rel="shortcut icon" href="#">
+    
 </head>
 <body>
     <h1 class="hidden">Learning Website</h1>
 
     <main class="app">
+        <!-- Vue Content -->
+        <section class="vueContainer">
+            <h2 class="vueHeader">{{ text1 }}</h2>
+            <p class="vueP">{{ text2 }}</p>
+            <!-- Apply showText style when showTextData is true -->
+            <p class="toggleText" :class="{'toggleTextV' : toggleP}">
+                This text toggles when you attack a character.
+            </p>
+            <ul class="vueList">
+                <!-- "v-for" is a Vue "for loop" to display every type of the data -->
+                <!-- 'item' and 'for' are keywords -->
+                <li class="fruitList" v-for="item in fruitArray" >
+                    <p @click="fruitClicked">{{item.name}}, {{item.type}}, {{item.trait}}, {{item.ability}}</p>
+                    <!-- :class makes Vue bind a class -->
+                    <a href="#" class="attackButton" @click.prevent="attackFruit(item)" :class="{'attackButton' : removeAformat }">Attack {{item.name}}</a>
+                </li>
+            </ul>
+        </section>
+
         <!-- this is where the template data goes -->
         <section class="projDynamic"></section>
-
     </main>
 
     <!--templates go below footer, they dont get rendered-->
@@ -30,5 +49,8 @@
 
 </body>
 <!--type is module and .js link always at bottom of html tag-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script type="module" src="js/main.js"></script>
+
+<script type="module" src="js/vueLocal.js"></script>
 </html>

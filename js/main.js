@@ -11,12 +11,12 @@ import { fetchData } from "./modules/Async.js";
     console.log("Java Loaded");
     //console.log(pArray);
 
-    function popErrorBox(message) {
-        alert("Pop Error Box: ")
+    function popErrorBox() {
+        alert("Error")
     }
 
-    
-    function handleDataSet(data) {
+    //old handledataset
+    function TESThandleDataSet(data) {
         // this defines the projDynamic tag in html as 'pDynamic'
         let pDynamic = document.querySelector(".projDynamic"),
             // .content used to access <template> tags
@@ -47,11 +47,41 @@ import { fetchData } from "./modules/Async.js";
         }
         console.log(data)
     }
-    // the function we defined above, this line uses it
-    //handleDataSet(pArray);
+
+    //trevor's hint
+    function handleDataSet(data) {
+        let lightbox = document.querySelector(".lightbox")
+    }
+
+    function retrieveProjInfo(event) {
+        if (!event.target.ID) { return }
+
+        fetchData(`./includes/index.php?id=${event.target.ID}`).then(data => console.log(data)).catch(err =>{console.log(err); popErrorBox(err);});
+    }
+
+    function renderProjThumbs(thumbs) {
+        let pDynamic = document.querySelector(".projDynamic"),
+            pTemplate = document.querySelector(".projTemplate").content;
+
+        for (let pID in thumbs) {
+            let pCurrent = pTemplate.cloneNode(true),
+                pCurrentInfo = pCurrent.querySelector(".projDiv").children;
+
+            pCurrentInfo[3].src = `./images/${thumbs[pID].Pic}`;
+            pCurrentInfo[3].ID = thumbs[pID].ID;
+            
+            pDynamic.appendChild(pCurrent);
+        }
+
+        //add listener for info on click
+        pDynamic.addEventListener("click", retrieveProjInfo);
+    }
 
 
     //async statements go at bottom of page. for multiple .json files just add another
     //fetch, then use handleDataSet, catch the errors w log and popErrorBox
-    fetchData("includes/functions.php").then(data => handleDataSet(data)).catch(err =>{console.log(err); popErrorBox(err);});
+    //fetchData("includes/index.php").then(data => handleDataSet(data)).catch(err =>{console.log(err); popErrorBox(err);});
+
+    //database call
+    fetchData("includes/index.php").then(thumbs => renderProjThumbs(thumbs)).catch(err =>{console.log(err); popErrorBox(err);});
 })();
